@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import Router from "./Router/index";
+import PostContext from "./Contexts/PostContext";
 
 function App() {
+
+  const [postById, setPostById] = useState()
+
   return (
     <div>
-      <Router/>
+      <PostContext.Provider value={{postById: postById, setPostById: setPostById}}>
+        <Router/>
+      </PostContext.Provider>
     </div>
   );
 }

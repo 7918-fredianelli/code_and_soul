@@ -53,6 +53,11 @@ export const ContainerTable = styled.div`
             border-collapse: collapse;
             border-bottom: 1px solid black;
             height: 58px;
+            cursor: pointer;
+            :hover{
+                transition: 0.5s;
+                background-color: rgba(0, 0, 0, 0.09);
+            }
 
             @media (max-width: 426px){
                 height: 50px;
@@ -81,4 +86,8 @@ export const ContainerTable = styled.div`
 
 export const FirstTr = styled.tr`
     background-color: #247777;
+    cursor: default !important;
+    :hover{
+        background-color:  #247777 !important;
+    }
 `

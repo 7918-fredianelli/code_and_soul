@@ -1,13 +1,16 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import axios from "axios";
 import Header from "../../Components/Header/index";
 import {ContainerFather, ContainerPostsList, ContainerTable, FirstTr} from "./styles";
+import PostContext from "../../Contexts/PostContext";
 
 function AllPosts(){
 
     const url = "https://jsonplaceholder.typicode.com/posts"
 
     const [postsList, setPostsList] = useState([]);
+
+    const {postById, setPostById} = useContext(PostContext)
 
     const getPosts = ()=>{
         axios 
@@ -16,6 +19,18 @@ function AllPosts(){
             console.log(response.data)
             setPostsList(response.data)
             console.log(postsList)
+        })
+        .catch(err=>{
+            console.log(err.message)
+        })
+    }
+
+    const getPostDetails = (id)=>{
+        axios
+        .get(`${url}/${id}`)
+        .then(response=>{
+            console.log(response.data)
+            setPostById(response.data)
         })
         .catch(err=>{
             console.log(err.message)
@@ -38,7 +53,7 @@ function AllPosts(){
                             </FirstTr>
                             {postsList.map((post)=>{
                                 return( 
-                                <tr key={post.id}>
+                                <tr key={post.id} onClick={()=> getPostDetails(post.id)}>
                                         <td>
                                             {post.id}
                                         </td>
