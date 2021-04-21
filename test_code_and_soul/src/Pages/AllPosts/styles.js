@@ -5,7 +5,7 @@ export const ContainerFather = styled.main`
     width: 100%;
     display: grid;
     grid-template-columns: 18% 82%;
-    grid-template-rows: 20% 80%;
+    grid-template-rows: 20vh 80%;
     background-color: white;
     font-family: Roboto;
 `
