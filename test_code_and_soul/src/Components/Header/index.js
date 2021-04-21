@@ -5,7 +5,7 @@ function Header(){
 
     return(
         <ContainerHeader>
-            Header
+            <p>Teste <strong>Code and Soul</strong></p>
         </ContainerHeader>
     )
 }
