@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from "../../Components/Header/index";
 import {ContainerFather, ContainerPostsList, ContainerTable, FirstTr} from "./styles";
 import PostContext from "../../Contexts/PostContext";
+import PostDetails from "./PostDetails/index";
 
 function AllPosts(){
 
@@ -11,6 +12,8 @@ function AllPosts(){
     const [postsList, setPostsList] = useState([]);
 
     const {postById, setPostById} = useContext(PostContext)
+
+    const [postDetails, setPostDetails] = useState(false)
 
     const getPosts = ()=>{
         axios 
@@ -31,6 +34,7 @@ function AllPosts(){
         .then(response=>{
             console.log(response.data)
             setPostById(response.data)
+            setPostDetails(true)
         })
         .catch(err=>{
             console.log(err.message)
@@ -44,6 +48,7 @@ function AllPosts(){
     return(
         <ContainerFather>
             <Header/>
+            {postDetails === true ? <PostDetails setPostDetails={setPostDetails} getPosts = {getPosts}/> : <></>}
             <ContainerPostsList>
                 <ContainerTable>
                     <table>
