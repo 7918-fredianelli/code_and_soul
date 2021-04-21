@@ -8,6 +8,16 @@ export const ContainerFather = styled.main`
     grid-template-rows: 20vh 80%;
     background-color: white;
     font-family: Roboto;
+
+        @media (max-width: 426px){
+            grid-template-rows: 10vh 80%;
+        }
+        @media (max-width: 376px){
+            grid-template-rows: 10vh 80%;
+        }
+        @media (max-width: 321px){
+            grid-template-rows: 10vh 80%;
+        }
 `
 
 export const ContainerPostsList = styled.div`

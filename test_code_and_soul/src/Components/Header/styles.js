@@ -9,6 +9,25 @@ export const ContainerHeader = styled.header`
     justify-content: center;
     align-items: center;
     font-size: 24px;
+
+        @media (max-width: 1024px){
+            font-size: 20px;
+        }
+
+        @media (max-width: 768px){
+            font-size: 16px;
+        }
+
+        @media (max-width: 426px){
+            font-size: 14px;
+        
+        }
+        @media (max-width: 376px){
+            font-size: 14px;
+        }
+        @media (max-width: 321px){
+            font-size: 8px;
+        }
     strong{
         cursor: pointer;
         color: #00ffff;
@@ -17,6 +36,27 @@ export const ContainerHeader = styled.header`
         :hover{
             transition: .5s;
             color: #25a2a2;
+        }
+
+        @media (max-width: 1024px){
+            font-size: 32px;
+        }
+
+        @media (max-width: 768px){
+            font-size: 24px;
+        }
+
+        @media (max-width: 426px){
+            font-size: 16px;
+            margin-left: 12px;
+        }
+        @media (max-width: 376px){
+            font-size: 14px;
+            margin-left: 12px;
+        }
+        @media (max-width: 321px){
+            font-size: 12px;
+            margin-left: 12px;
         }
     }
 `
