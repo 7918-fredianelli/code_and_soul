@@ -1,8 +1,11 @@
+import Header from "../../Components/Header/index";
+import { ContainerFather} from "./styles";
+
 function AllPosts(){
     return(
-        <div>
-            AllPosts
-        </div>
+        <ContainerFather>
+            <Header/>
+        </ContainerFather>
     )
 }
 export default AllPosts;
